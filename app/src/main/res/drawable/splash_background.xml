@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <item
+        android:drawable="?splash_background"/>
+
+    <item
+        android:right="20dp"
+        android:left="30dp"
+        android:bottom="60dp"
+        >
+        <bitmap
+            android:gravity="bottom"
+            android:src="@drawable/gcera_logo"
+            android:tint="?splash_text"
+            />
+    </item>
+
+</layer-list>

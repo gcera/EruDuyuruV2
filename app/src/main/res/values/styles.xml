@@ -1,0 +1,44 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="nav_bar_icon_tint_checked">#404040</item>
+        <item name="nav_bar_icon_tint_unchecked">#656565</item>
+        <item name="second_text_color">#5A5A5A</item>
+        <item name="customShimmerColor">#FFFFFF</item>
+        <item name="card_background">#F6F6F6</item>
+        <item name="android:colorEdgeEffect">#F6F6F6</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:statusBarColor">#F6F6F6</item>
+    </style>
+
+    <style name="DarkTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="android:statusBarColor">@color/onSurfaceColor</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="nav_bar_icon_tint_unchecked">#404040</item>
+        <item name="nav_bar_icon_tint_checked">#9F9F9F</item>
+        <item name="second_text_color">#676767</item>
+        <item name="customShimmerColor">#333333</item>
+        <item name="card_background">@color/onSurfaceColor</item>
+        <item name="android:colorEdgeEffect">@color/onSurfaceColor</item>
+    </style>
+
+    <style name="SplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="splash_background">#F6F6F6</item>
+        <item name="splash_text">@color/onSurfaceColor</item>
+    </style>
+
+    <style name="DarkSplashTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar.Bridge">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="splash_background">@color/onSurfaceColor</item>
+        <item name="splash_text">#F6F6F6</item>
+    </style>
+
+</resources>

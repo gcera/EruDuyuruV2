@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">Eru Duyuru</string>
+
+    <string-array name="announce_control_time_options">
+        <item>15 Dakika</item>
+        <item>30 Dakika</item>
+        <item>1 Saat</item>
+        <item>2 Saat</item>
+        <item>12 Saat</item>
+    </string-array>
+
+    <string-array name="meal_control_time_options">
+        <item>Gündüz</item>
+        <item>Akşam</item>
+    </string-array>
+
+</resources>

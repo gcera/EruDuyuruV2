@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/ic_main"
+        android:title="Anasayfa" />
+    <item
+        android:id="@+id/announceListFragment"
+        android:icon="@drawable/ic_announces"
+        android:title="Duyurular" />
+    <item
+        android:id="@+id/departmentsFragment"
+        android:icon="@drawable/ic_departs"
+        android:title="Fakülteler" />
+    <item
+        android:id="@+id/settingsFragment"
+        android:icon="@drawable/ic_settings"
+        android:title="Ayarlar" />
+
+</menu>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="gcera.app.eruduyuru.ui.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/departmentsFragment"
+        android:name="gcera.app.eruduyuru.ui.fragments.DepartmentsFragment"
+        android:label="DepartmentsFragment" >
+    </fragment>
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="gcera.app.eruduyuru.ui.fragments.DetailFragment"
+        android:label="DetailFragment" >
+        <action
+            android:id="@+id/action_detailFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_detailFragment_to_announceListFragment"
+            app:destination="@id/announceListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/announceListFragment"
+        android:name="gcera.app.eruduyuru.ui.fragments.AnnounceListFragment"
+        android:label="AnnounceListFragment" >
+        <action
+            android:id="@+id/action_announceListFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="gcera.app.eruduyuru.ui.fragments.SettingsFragment"
+        android:label="SettingsFragment" />
+</navigation>
