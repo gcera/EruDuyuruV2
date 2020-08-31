@@ -17,6 +17,7 @@
         android:layout_margin="2dp"
         android:gravity="center_vertical"
         android:textColor="?nav_bar_icon_tint_checked"
+        android:maxLines="2"
         />
 
 </androidx.cardview.widget.CardView>

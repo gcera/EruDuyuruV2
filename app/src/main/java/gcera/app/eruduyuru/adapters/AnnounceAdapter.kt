@@ -30,8 +30,8 @@ class AnnounceAdapter(var data:List<Announce>,private val onClick:(pos:Int)->Uni
             }
             var title=data[position].title
 
-            title=if (title.length>75) (title.substring(0,74)+"..").toUpperCase(Locale.getDefault())
-            else title.toUpperCase(Locale.getDefault())
+            /*title=if (title.length>75) (title.substring(0,74)+"..").toUpperCase(Locale.getDefault())
+            else title.toUpperCase(Locale.getDefault())*/
             titleText.text=title
         }
     }

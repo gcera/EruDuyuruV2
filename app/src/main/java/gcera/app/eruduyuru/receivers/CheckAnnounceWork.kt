@@ -1,26 +1,28 @@
 package gcera.app.eruduyuru.receivers
 
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
+import android.net.ConnectivityManager
+import androidx.work.CoroutineWorker
+import androidx.work.WorkerParameters
 import gcera.app.eruduyuru.R
-import gcera.app.eruduyuru.objects.Alarm
 import gcera.app.eruduyuru.objects.AppData
 import gcera.app.eruduyuru.objects.Constants
 import gcera.app.eruduyuru.objects.Notify
 import kotlinx.coroutines.ExperimentalCoroutinesApi
-import java.util.*
+import okhttp3.*
+import org.jsoup.Jsoup
+import java.io.IOException
 
 @ExperimentalCoroutinesApi
-class AnnounceReceiver : BroadcastReceiver() {
+class CheckAnnounceWork(private val context:Context, params:WorkerParameters)
+    :CoroutineWorker(context,params) {
 
-    override fun onReceive(context: Context, intent: Intent) {
-        if (intent.action == Constants.ACTION_CHECK_MEAL)
-            checkMeal(context)
+    override suspend fun doWork(): Result {
+        checkLastAnnounce(context)
+        return Result.success()
     }
 
-   /* private fun checkLastAnnounce(context: Context) {
-        println(AnnounceReceiver::class.simpleName + " check started")
+    private fun checkLastAnnounce(context: Context) {
         val sharedPref =
             context.getSharedPreferences(Constants.SHARED_PREF_NAME, Context.MODE_PRIVATE)
         val requestNumber = sharedPref.getInt(Constants.KEY_DATA_INDEX, -1)
@@ -30,15 +32,13 @@ class AnnounceReceiver : BroadcastReceiver() {
             val requestData = AppData.getRequestData(requestNumber, forMuh)
             val client = OkHttpClient.Builder().build()
             val request = Request.Builder().url(requestData.url).build()
-            val imgId = when {
+            val imgId=when {
                 forMuh and (requestNumber != -1) -> AppData.MUH_LOGOLAR[requestNumber]
                 !forMuh and (requestNumber != -1) -> AppData.FAKULTE_LOGOLAR[requestNumber]
                 else -> R.drawable.ic_main
             }
             client.newCall(request).enqueue(object : Callback {
-                override fun onFailure(call: Call, e: IOException) {
-                }
-
+                override fun onFailure(call: Call, e: IOException) {}
                 override fun onResponse(call: Call, response: Response) {
                     val cssSelector = "${requestData.select0}1${requestData.select1}"
                     val elements = Jsoup.parse(response.body?.string()).select(cssSelector)
@@ -66,20 +66,12 @@ class AnnounceReceiver : BroadcastReceiver() {
                 }
             })//enqueue
         }
-    }*/
+    }
 
-    private fun checkMeal(context: Context) {
-        val requestData = AppData.getMealData()
-        Notify.sendNotification(
-            context,
-            "Bugün yemekte ne var?",
-            "Yemek Listesi",
-            requestData.url,
-            requestData.select0,
-            R.drawable.ic_meal
-        )
-        val mealTime=  if (Calendar.getInstance().get(Calendar.HOUR_OF_DAY)>12) 1 else 0
-        println("setted meal time $mealTime")
-        Alarm.setCheckMealAlarm(context,true,mealTime)
+    private fun isNetworkAvailable(context: Context): Boolean {
+        val connectivityManager
+                = context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+        val activeNetworkInfo = connectivityManager.activeNetwork
+        return activeNetworkInfo != null
     }
 }

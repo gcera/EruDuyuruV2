@@ -27,9 +27,11 @@ object AppData {
         }
     }
 
+//#ctl01 > div.container.containerShadow > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) > div > div.DetayCenter.col-lg-9.col-md-9.col-sm-11.col-xs-11 > div.row.Detay > div > div > div > div.DetayText > div > div > div:nth-child(1)
+
     fun getMealData() = RequestData(
         url = "https://www.erciyes.edu.tr/kategori/KAMPUSTE-YASAM/Yemek-Hizmetleri/22/167",
-        select0 = "#ctl01 > div.container.containerShadow > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) > div > div.DetayCenter.col-lg-9.col-md-9.col-sm-11.col-xs-11 > div.row.Detay > div > div > div > div.DetayText > div > div",
+        select0 = "#ctl01 > div.container.containerShadow > div:nth-child(2) > div > div > div:nth-child(2) > div:nth-child(2) > div > div.DetayCenter.col-lg-9.col-md-9.col-sm-11.col-xs-11 > div.row.Detay > div > div > div > div.DetayText > div > div > div:nth-child(1)",
         select1 = "",
         indexSelect = "",
         departName = "",

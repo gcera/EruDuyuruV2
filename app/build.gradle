@@ -11,8 +11,8 @@ android {
         applicationId "gcera.app.eruduyuru"
         minSdkVersion 23
         targetSdkVersion 30
-        versionCode 4
-        versionName "3.2.7"
+        versionCode 5
+        versionName "3.2.9"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -69,4 +69,7 @@ dependencies {
     implementation 'com.github.m7mdra:HtmlRecycler:0.1.11'
 
     implementation 'com.faltenreich:skeletonlayout:2.1.0'
+
+    implementation 'androidx.work:work-runtime-ktx:2.5.0-alpha01'
+   // implementation 'com.soywiz.korlibs.klock:klock-android:1.12.0'
 }

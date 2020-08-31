@@ -6,7 +6,6 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import androidx.core.app.NotificationCompat
-import gcera.app.eruduyuru.R
 import gcera.app.eruduyuru.ui.activities.MainActivity
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 
@@ -44,7 +43,7 @@ object Notify {
                         PendingIntent.FLAG_UPDATE_CURRENT
                     )
                 )
-                setSmallIcon(R.drawable.ic_main)
+                setSmallIcon(imgId)
             }
         notifyManager.notify(60, notifyBuilder.build())
     }

@@ -1,8 +1,10 @@
 package gcera.app.eruduyuru.ui.activities
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.View
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
@@ -33,6 +35,8 @@ class MainActivity : AppCompatActivity() {
         navigateDetailFragment(intent)
     }
 
+
+    @RequiresApi(Build.VERSION_CODES.N)
     override fun onDestroy() {
         super.onDestroy()
         writeUserPref()
@@ -106,9 +110,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    @RequiresApi(Build.VERSION_CODES.N)
     private fun setAlarms() {
         Alarm.setCheckMealAlarm(this, userPref.isMealActive, userPref.mealTime)
-        Alarm.setCheckLastAnnounceAlarm(this, userPref.isAnnounceActive, userPref.announceTime)
+        Alarm.setCheckLastAnnounceAlarmWithWorkManager(this, userPref.isAnnounceActive, userPref.announceTime)
     }
 
     private fun showChooseDepartDialog() {
