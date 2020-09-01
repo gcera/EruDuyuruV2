@@ -39,7 +39,7 @@ class MainFragment : Fragment(R.layout.fragments_main) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         mainDepartmentAnnounceText.text = mainViewModel.mainAnnounceText
-        mainEruAnnounceAnnounceText.text = mainViewModel.mainEruAnnounceText
+        mainEruAnnounceText.text = mainViewModel.mainEruAnnounceText
         mainEruNewsText.text = mainViewModel.mainEruNewsText
         val forMuh = sharedPreferences.getBoolean(Constants.KEY_FOR_MUH, false)
         val index = sharedPreferences.getInt(Constants.KEY_DATA_INDEX, -1)
@@ -82,7 +82,7 @@ class MainFragment : Fragment(R.layout.fragments_main) {
                             val elements = Jsoup.parse(response.body?.string()).select(cssSelector)
                             val mealText = HtmlCompat.fromHtml(elements.html(),0)
                             withContext(Dispatchers.Main) {
-                                if (mainEruAnnounceAnnounceText != null) {
+                                if (mainEruAnnounceText != null) {
                                     mainMealTextLayout.showOriginal()
                                     mainMealText.text = mealText
                                     if (requestData != null) {
@@ -200,8 +200,8 @@ class MainFragment : Fragment(R.layout.fragments_main) {
                             val elements = Jsoup.parse(response.body?.string()).select(cssSelector)
                             val title = elements.text()
                             withContext(Dispatchers.Main) {
-                                if (mainEruAnnounceAnnounceText != null) {
-                                    mainEruAnnounceAnnounceText.text = title
+                                if (mainEruAnnounceText != null) {
+                                    mainEruAnnounceText.text = title
                                     mainEruAnnounceCard.showOriginal()
                                 }
                                 mainViewModel.mainEruAnnounceText = title

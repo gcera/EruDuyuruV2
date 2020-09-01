@@ -61,11 +61,11 @@ object AppData {
         select0 = "#ctl03_dlDuyuru > tbody > tr:nth-child(",
         select1 = ") > td > span.NormalBlue",
         indexSelect = "#ctl03_dlDuyuru > tbody > tr:nth-child(",
-        imgId = R.drawable.ic_main,
-        departName = "Obisis"
+        imgId = R.drawable.ic_obisis,
+        departName = "Obisis Duyurular"
     )
 
-    val obisisIndexSelect_=") > td > span.Normal"
+    const val obisisIndexSelect_=") > td > span.Normal"
 
     val defaultUserPref = UserPref(
         isDarkThemeActive = false,

@@ -110,7 +110,7 @@ class DepartmentsFragment : Fragment(R.layout.fragments_departs) {
         val data=AppData.getRequestData(pos,forMuh )
         MaterialAlertDialogBuilder(requireContext())
             .setTitle("Erü Duyuru")
-            .setMessage("${data.departName} varsayılan bölüm olarak kaydedilsinmi?" )
+            .setMessage("${data.departName} varsayılan bölüm olarak kaydedilsinmi?\n Daha sonra değiştirmek istersen bölüm kartı üzerine basılı tutman yeterli." )
             .setPositiveButton("Evet") { p0, p1 ->
                 requireContext().getSharedPreferences(
                     Constants.SHARED_PREF_NAME,
@@ -127,10 +127,7 @@ class DepartmentsFragment : Fragment(R.layout.fragments_departs) {
                 }
             }
             .setNegativeButton("Hayır"){p0,p1->
-                findNavController().run {
-                    popBackStack()
-                    navigate(R.id.announceListFragment)
-                }
+                p0.dismiss()
             }.create().show()
     }
 }

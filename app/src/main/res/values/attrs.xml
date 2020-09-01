@@ -3,6 +3,7 @@
     <attr name="nav_bar_icon_tint_checked" format="color"/>
     <attr name="nav_bar_icon_tint_unchecked" format="color"/>
     <attr name="card_background" format="color"/>
+    <attr name="card_background_pressed" format="color"/>
     <attr name="second_text_color" format="color"/>
     <attr name="customShimmerColor" format="color"/>
     <attr name="splash_background" format="color"/>

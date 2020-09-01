@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:layout_margin="1dp"
     android:clipToPadding="true"
-    android:backgroundTint="?card_background">
+    android:backgroundTint="@drawable/card_background">
 
     <TextView
         android:id="@+id/titleText"

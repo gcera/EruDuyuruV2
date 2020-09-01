@@ -6,7 +6,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:padding="2dp">
         <com.faltenreich.skeletonlayout.SkeletonLayout
             android:id="@+id/mainDepartmentAnnounceCard"
             android:layout_width="match_parent"
@@ -29,8 +30,10 @@
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:minHeight="60dp"
+                    android:maxLines="2"
                     android:textColor="?nav_bar_icon_tint_checked"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    />
             </androidx.cardview.widget.CardView>
         </com.faltenreich.skeletonlayout.SkeletonLayout>
 
@@ -51,11 +54,12 @@
                 android:backgroundTint="?card_background">
 
                 <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/mainEruAnnounceAnnounceText"
+                    android:id="@+id/mainEruAnnounceText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:minHeight="70dp"
+                    android:minHeight="60dp"
+                    android:maxLines="2"
                     android:textColor="?nav_bar_icon_tint_checked"
                     android:textSize="18sp" />
             </androidx.cardview.widget.CardView>
@@ -82,10 +86,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:minHeight="70dp"
+                    android:minHeight="60dp"
+                    android:maxLines="2"
                     android:text=""
                     android:textColor="?nav_bar_icon_tint_checked"
-                    android:textSize="18sp" />
+                    android:textSize="18sp"
+                    />
             </androidx.cardview.widget.CardView>
         </com.faltenreich.skeletonlayout.SkeletonLayout>
 
@@ -96,14 +102,14 @@
             android:nestedScrollingEnabled="false"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/mainEruNewsCard"
-            app:spanCount="2" />
+            app:spanCount="2"
+            app:layout_constraintBottom_toTopOf="@id/mainMealTitle"/>
 
         <androidx.cardview.widget.CardView
             android:id="@+id/mainMealTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
-            android:layout_marginBottom="30dp"
             android:backgroundTint="?card_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintTop_toBottomOf="@id/mainMenuRV">

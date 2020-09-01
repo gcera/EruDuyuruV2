@@ -39,6 +39,8 @@ class AnnounceListFragment : Fragment(R.layout.fragments_announces) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        announceListTitleIV.setImageResource(requestData.imgId)
+        announceListTitleTV.text=requestData.departName
         mainViewModel.liveRequestData.observe(viewLifecycleOwner, {
             if ((mainViewModel.oldRequestData == null) or (mainViewModel.oldRequestData != it)) {
                 requestData = it

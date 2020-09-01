@@ -1,137 +1,210 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
-   <com.faltenreich.skeletonlayout.SkeletonLayout
-       android:id="@+id/announcesSkeleton"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:visibility="gone"
-       app:maskColor="?card_background"
-       app:shimmerColor="?customShimmerColor"
-       app:shimmerDurationInMillis="700"
-       android:padding="2dp"
-       app:showShimmer="true"
-       app:layout_constraintBottom_toTopOf="@id/announcesRV">
-
-      <androidx.appcompat.widget.LinearLayoutCompat
-          android:layout_width="match_parent"
-          android:layout_height="match_parent"
-          android:orientation="vertical"
-          android:padding="2dp">
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
-
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/announceListTitleLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:cardElevation="8dp"
+        android:clipToPadding="true"
+        app:layout_constraintBottom_toTopOf="@id/announcesSkeleton"
+        android:backgroundTint="?card_background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="4dp">
+            <ImageView
+                android:id="@+id/announceListTitleIV"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:scaleType="fitCenter"
+                android:layout_gravity="center"
+                android:cropToPadding="true"
+                app:tint="?nav_bar_icon_tint_checked"/>
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/mainEruNewsText"
+                android:id="@+id/announceListTitleTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                android:maxLines="1"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:textColor="?nav_bar_icon_tint_checked"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <com.faltenreich.skeletonlayout.SkeletonLayout
+        android:id="@+id/announcesSkeleton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:visibility="gone"
+        app:maskColor="?card_background"
+        app:layout_constraintTop_toBottomOf="@id/announceListTitleLL"
+        app:layout_constraintBottom_toTopOf="@id/announcesRV"
+        app:shimmerColor="?customShimmerColor"
+        app:shimmerDurationInMillis="700"
+        app:showShimmer="true">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="2dp">
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-            <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/mainEruNewsText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-            <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-            <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-            <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-            <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
 
-            <com.google.android.material.textview.MaterialTextView
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
-         <androidx.cardview.widget.CardView
-             android:layout_width="match_parent"
-             android:layout_height="wrap_content"
-             android:layout_margin="2dp"
-             android:backgroundTint="?card_background">
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-            <com.google.android.material.textview.MaterialTextView
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:minHeight="65dp"
-                />
-         </androidx.cardview.widget.CardView>
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-      </androidx.appcompat.widget.LinearLayoutCompat>
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
 
-   </com.faltenreich.skeletonlayout.SkeletonLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
 
-   <androidx.recyclerview.widget.RecyclerView
-       android:id="@+id/announcesRV"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       app:layout_constraintTop_toBottomOf="@id/announcesSkeleton"
-       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-       android:orientation="vertical"
-       />
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="1dp"
+                android:backgroundTint="?card_background">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="55dp" />
+            </androidx.cardview.widget.CardView>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </com.faltenreich.skeletonlayout.SkeletonLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/announcesRV"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@id/announcesSkeleton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
